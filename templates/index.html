@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Antibiotic Stewardship Tool</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #fdfcfb;
+            color: #0d0c22;
+            scroll-behavior: smooth;
+        }
+        header {
+            background: linear-gradient(90deg, #6e6d7a, #0d0c22);
+            animation: gradient-move 5s infinite alternate;
+        }
+        footer {
+            background: #0d0c22;
+            color: #ffffff;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #ea4c89, #6e6d7a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hover-scale {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+        }
+        .hover-scale:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s forwards;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes gradient-move {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(90deg, #ea4c89, #6e6d7a);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 12px 16px;
+            font-size: 20px;
+            display: none;
+            z-index: 50;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .scroll-to-top:hover {
+            transform: scale(1.2);
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        .scroll-to-top.show {
+            display: block;
+        }
+        .bg-section {
+            background-color: #ffffff;
+        }
+        .card {
+            background-color: #f3f3f4;
+            color: #6e6d7a;
+        }
+        .card h4 {
+            color: #0d0c22;
+        }
+    </style>
+</head>
+<body class="font-sans leading-relaxed tracking-wide relative">
+
+    <header class="text-white py-8">
+        <div class="container mx-auto text-center">
+            <h1 class="text-5xl font-extrabold gradient-text">AI-Powered Antibiotic Stewardship Tool</h1>
+            <p class="text-lg mt-2">Revolutionizing antibiotic use to combat bacterial resistance</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto py-12">
+        <section class="mb-12 fade-in">
+            <h2 class="text-4xl font-bold mb-6">Project Implementation</h2>
+            <p class="text-lg">Our AI-powered Antibiotic Stewardship Tool was designed to address the growing challenge of antibiotic resistance by leveraging cutting-edge technology and comprehensive data sources. Below, we outline the detailed steps taken to implement this innovative solution:</p>
+        </section>
+
+        <section class="mb-12 fade-in">
+            <h3 class="text-3xl font-semibold mb-6">Data Sources</h3>
+            <p class="text-lg mb-6">We utilized a variety of reliable and authoritative data sources to ensure the accuracy and comprehensiveness of our model. These included:</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card shadow-lg rounded-lg p-6 hover-scale">
+                    <div class="bg-gray-300 h-32 w-full mb-4 rounded-md flex items-center justify-center"><img src="{{ url_for('static', filename='IMAGES/who.svg') }}"> </div>
+                    <h4 class="text-xl font-bold mb-2">WHO GLASS</h4>
+                    <p>We used data from the WHO Global Antimicrobial Resistance and Use Surveillance System (GLASS) to analyze global resistance trends.</p>
+                </div>
+                <div class="card shadow-lg rounded-lg p-6 hover-scale">
+                    <div class="bg-gray-300 h-32 w-full mb-4 rounded-md flex items-center justify-center"><img src="{{ url_for('static', filename='IMAGES/fda.jpg') }}"></div>
+                    <h4 class="text-xl font-bold mb-2">OpenFDA</h4>
+                    <p>Integrated FDA drug databases to access information on recent antibiotic approvals, adverse events, and safety profiles.</p>
+                </div>
+                <div class="card shadow-lg rounded-lg p-6 hover-scale">
+                    <div class="bg-gray-300 h-32 w-full mb-4 rounded-md flex items-center justify-center"><img src="{{ url_for('static', filename='IMAGES/NLM_White.png') }}"></div>
+                    <h4 class="text-xl font-bold mb-2">RxNorm</h4>
+                    <p>Utilized RxNorm data to ensure standardization of antibiotic names, formulations, and dosages across all datasets.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-12 fade-in">
+            <h3 class="text-3xl font-semibold mb-6">Model Training and Development</h3>
+            <p class="text-lg mb-6">The development of the predictive model involved rigorous methodologies to ensure accuracy and reliability. Key steps included:</p>
+            <div class="bg-section shadow-lg rounded-lg p-8">
+                <ol class="list-decimal list-inside space-y-4">
+                    <li><strong>Data Cleaning and Preprocessing:</strong> Ensured data uniformity, addressed missing values, and harmonized sources for consistency.</li>
+                    <li><strong>Feature Engineering:</strong> Included patient demographics, antibiotic usage, infection details, and local resistance patterns.</li>
+                    <li><strong>Model Selection:</strong> Leveraged Gradient Boosting and Neural Networks for predictive analytics.</li>
+                    <li><strong>Training and Validation:</strong> Used robust cross-validation and an 80/20 data split for training and testing.</li>
+                    <li><strong>Explainability:</strong> Integrated SHAP values for transparent clinician insights into model outputs.</li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="fade-in">
+            <h3 class="text-3xl font-semibold mb-6">Deliverables</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="card shadow-lg rounded-lg p-6 hover-scale">
+                    <h4 class="text-xl font-bold mb-2">Functional Prototype</h4>
+                    <p>A fully functional prototype of the AI-powered Antibiotic Stewardship Tool, including prediction and recommendation capabilities, has been developed and rigorously tested.</p>
+                </div>
+                <div class="card shadow-lg rounded-lg p-6 hover-scale">
+                    <h4 class="text-xl font-bold mb-2">Clinician Dashboard</h4>
+                    <p>We designed an intuitive, user-friendly dashboard for clinicians to input data, review recommendations, and provide feedback for continuous improvement.</p>
+                </div>
+                <div class="card shadow-lg rounded-lg p-6 hover-scale">
+                    <h4 class="text-xl font-bold mb-2">Documentation and Training</h4>
+                    <p>Comprehensive documentation and training materials were prepared to ensure effective adoption and optimal use of the tool in various clinical settings.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-12 text-center">
+            <a href="/home" class="bg-gradient-to-r from-pink-500 to-gray-600 text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition duration-300 inline-block">Open Predictor AI</a>
+        </section>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Doctor Portal</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(-45deg, #74ebd5, #acb6e5, #ffffff);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+        }
+
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        nav a:hover {
+            background-color: #666;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            padding: 30px;
+        }
+
+        .post {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .post h2 {
+            color: #003366;
+            font-size: 1.8rem;
+        }
+
+        .post p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .post .date {
+            font-size: 0.9rem;
+            color: #777;
+            margin-bottom: 10px;
+        }
+
+        .more-content {
+            display: none;
+            font-size: 1rem;
+            color: #555;
+            margin-top: 10px;
+        }
+
+        footer {
+            background-color: #003366;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        Doctor Portal Blog
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="blog.html">Blog</a>
+    </nav>
+
+    <div class="container">
+        <div class="post">
+            <h2>AI in Antibiotic Resistance Prediction</h2>
+            <p class="date">Published on January 29, 2025</p>
+            <p>In recent years, antibiotic resistance has become one of the most pressing global health challenges. With the rise of resistant pathogens, healthcare providers are finding it increasingly difficult to treat infections. Artificial intelligence (AI) has emerged as a promising tool to help address this issue by predicting resistance patterns based on patient data...</p>
+            <a href="javascript:void(0);" onclick="toggleContent(1)">Read more...</a>
+            <div class="more-content" id="more-content-1">
+                <p>AI can analyze a wide range of factors, including genetic information, patient demographics, and clinical history, to predict how different bacterial strains will respond to antibiotics. This data-driven approach provides doctors with critical insights, helping them make more informed decisions about the best treatment options available...</p>
+                <p>Additionally, by continuously learning from new data, AI algorithms can improve over time, adapting to evolving patterns of resistance. This is particularly important as antibiotic resistance continues to develop and spread worldwide...</p>
+            </div>
+        </div>
+
+        <div class="post">
+            <h2>Improving Patient Outcomes with AI-Driven Antibiotics Selection</h2>
+            <p class="date">Published on January 20, 2025</p>
+            <p>Selecting the most appropriate antibiotic is critical to ensuring effective treatment and preventing the further spread of resistant bacteria. AI-powered applications are now being used to assist doctors in making informed decisions, resulting in better patient outcomes and optimized antibiotic usage...</p>
+            <a href="javascript:void(0);" onclick="toggleContent(2)">Read more...</a>
+            <div class="more-content" id="more-content-2">
+                <p>AI-driven tools analyze patient data, including medical history, current health status, and microbiological testing, to identify the most suitable antibiotics. This not only speeds up the diagnosis and treatment process but also reduces unnecessary use of broad-spectrum antibiotics, which is a significant factor in the development of resistance...</p>
+                <p>By narrowing down the antibiotic selection, AI helps avoid the overuse of ineffective treatments, ensuring that patients receive the best possible care based on the latest evidence and their unique health profile...</p>
+            </div>
+        </div>
+
+        <div class="post">
+            <h2>The Role of Big Data in Combatting Antibiotic Resistance</h2>
+            <p class="date">Published on January 10, 2025</p>
+            <p>Big data is revolutionizing the way healthcare professionals approach patient care. By analyzing vast amounts of clinical, genetic, and microbiological data, researchers are gaining valuable insights into antibiotic resistance patterns. This data-driven approach is leading to the development of more targeted therapies...</p>
+            <a href="javascript:void(0);" onclick="toggleContent(3)">Read more...</a>
+            <div class="more-content" id="more-content-3">
+                <p>Big data technologies enable the integration of diverse datasets, including genomic sequences, patient records, and clinical outcomes, to create a more comprehensive view of antibiotic resistance trends. This helps identify emerging resistance patterns, track the effectiveness of treatments over time, and optimize treatment regimens...</p>
+                <p>Furthermore, the use of machine learning algorithms on big data sets allows for the early detection of new resistance mechanisms, potentially preventing the spread of dangerous resistant bacteria before they become widespread...</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        © 2025 Doctor Portal | All rights reserved.
+    </footer>
+
+    <script>
+        function toggleContent(postId) {
+            const moreContent = document.getElementById(`more-content-${postId}`);
+            if (moreContent.style.display === 'block') {
+                moreContent.style.display = 'none';
+            } else {
+                moreContent.style.display = 'block';
+            }
+        }
+    </script>
+
+</body>
+
+</html>
